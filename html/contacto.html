@@ -31,93 +31,64 @@
 
 
     <main id="backgroundHome2">
-        <div id="grillaReservas">
-            <div id="maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13137.905673817804!2d-58.43141472012941!3d-34.592112544876464!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xff922461525d0808!2sKenna!5e0!3m2!1ses-419!2sar!4v1645065314906!5m2!1ses-419!2sar" width="90%" height="70%" style="border:4;" allowfullscreen="" loading="lazy"></iframe>
+        <form >
+            <div class="container">
+                <fieldset>
+                    <legend>¡Dejanos tus datos para contactarte!</legend>
+                    <section class="row">
+                        <div class="mb-3" class="col">
+                            <label for="text" class="form-label">Nombre y apellido</label>
+                            <input type="text" class="form-control" required>  
+                        </div>
+            
+                        <div class="mb-3" class="col">
+                        <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" placeholder="nombre@ejemplo.com" required>
+                        </div>
+                    </section>
+                    <section class="row">
+                        <div class="mb-3">
+                            <label for="number" class="form-label">Número de Contacto</label>
+                            <input type="number" class="form-control" placeholder="Optativo">
+                        </div>
+            
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Fecha estimada de la reserva</label>
+                            <input type="date"class="form-control" name="trip-start" value="2022-02-26" min="2022-02-17">
+                        </div>
+                    </section>
+
+                    <section class="row">        
+                        <div class="mb-3">
+                            <label for="disabledSelect" class="form-label">Motivo</label>
+                            <select id="disabledSelect" class="form-select" required>
+                                <option value="1">Reserva</option>
+                                <option value="2">Consulta</option>
+                                <option value="3">Cumpleaños</option>
+                                <option value="4">Evento privado</option>
+                                <option value="5">Trabaja con Nosotros</option>
+                                <option value="6">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="textarea" class="form-label">Tu comentario</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                    </section>    
+
+                    <section id="button">
+                        <div class="button2">
+                            <input type="submit" class="btn btn-outline-dark" class value="Enviar">                            
+                        </div>
+                        <div class="button2">
+                            <input type="reset" class="btn btn-outline-dark" value="Resetear">                            
+                        </div>
+                    </section>
+                </fieldset>
+
             </div>
-            <section>
-                <div>
-                    <h2 class="visita">VISITANOS</h2>
-                    <p class="atencion">TODOS LOS DIAS <br> 7:00 a 03:00hs</p>
-                    <div id="contenedorUbi">
-                        <img src="../assets/icons8-marker-o-50.png" class="iconRedes" alt="Google Kenna">
-                    </div>
-                    <div id="contenedorRedes">
-                        <div id="contenedorRedes2" >
-                            <a href="https://www.facebook.com/Kenna-Palermo-Soho-104193435452296/">
-                                <img src="../assets/icons8-facebook-50.png" class="iconRedes" alt="Kenna Facebook">
-                            </a>
-                            <a href="https://www.instagram.com/kennapalermosoho/">
-                                <img src="../assets/icons8-instagram-50.png" class="iconRedes" alt="Kenna Instagram">
-                            </a>
-                            <a href="">
-                                <img src="../assets/icons8-whatsapp-50.png" class="iconRedes" alt="Kenna Whatsapp">
-                            </a>
-                        </div>
-                    </div> 
-                </div>
-            </section>
-
-
-            <section id="fromSection">
-                <form action="">
-                    <fieldset>
-                        <legend>¡Dejanos tus datos para contactarte!</legend>
-                        <div class="divForm">
-                            <label for="text">Nombre y apellido
-                                <input type="text" required>
-                            </label>
-                        </div>
-                        <div class="divForm">
-                            <label for="email">Correo electrónico
-                                <input type="email" placeholder="nombre@ejemplo.com" required>
-                            </label>
-                        </div>
-                        <div class="divForm">
-                            <label for="tel">Número de contacto (Optativo)
-                                <input type="tel" placeholder="(Código de area) + Numero">
-                            </label>
-                        </div>
-                        <div class="divForm">
-                            <label for="motivo">Motivo
-                                <select name="motivo" id="" required>
-                                    <option value="1">Reserva</option>
-                                    <option value="2">Consulta</option>
-                                    <option value="3">Cumpleaños</option>
-                                    <option value="4">Evento privado</option>
-                                    <option value="5">Trabaja con Nosotros</option>
-                                    <option value="6">Otro</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="divForm">
-                            <label for="date">Fecha estimada de la reserva (Optativo)
-                                <input type="date" name="trip-start" value="2022-02-17"
-                                min="2022-02-17" >
-                            </label>
-                        </div>
-                        <div id="comentario">
-                            <label for="comentario">Comentario
-                                <textarea name="comentario" id="" cols="30" rows="10"></textarea>
-                            </label>
-                        </div>
-                        <div class="divForm">
-                            <input type="submit" value="Enviar">
-                            <input type="reset" value="Resetear">
-                        </div> 
-                    </fieldset>
-                </form>
-            </section>
-    
-            <section id="redes">
-                
-            </section>
-    
-    
-    
-    
-    
-        </div>
+        </form>
 
 
 
