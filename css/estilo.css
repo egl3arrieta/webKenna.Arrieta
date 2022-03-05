@@ -112,6 +112,7 @@ footer div a{
     font-family: 'Darker Grotesque', sans-serif;
     color: white;
     text-align: center;
+    font-size: calc(10px + 1.5vw);
 }
 .flechas{
     width: calc(10px + 10vw);
@@ -122,11 +123,6 @@ footer div a{
 img{
     width: 100%;
     height: 100%;
-}
-
-.bannerFont{
-    font-size: calc(10px + 1.5vw);
-    text-align: center;
 }
 
 /*----------------BAR----------------*/

@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+/*header + nav*/
+nav #logo a {
+  text-decoration: none; }
+
+nav #logo .kennaFont {
+  font-family: 'Prompt', sans-serif;
+  font-weight: bold; }
+
+nav ul {
+  display: flex;
+  list-style-type: none; }
+  nav ul li {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none; }
+    nav ul li a {
+      color: white;
+      text-decoration: none; }
+
+footer {
+  background-color: black; }
+  footer footer div a {
+    text-decoration: none; }
+  footer #footerRedes2 {
+    background-color: rgba(65, 65, 65, 0.39);
+    border-radius: 20px; }
+  footer #footerRedes2:hover {
+    background-color: rgba(87, 36, 92, 0.397); }
+  footer .kennaFooter {
+    font-family: 'Prompt', sans-serif;
+    color: #777676;
+    text-align: center; }
+  footer .pFooter {
+    font-family: 'Prompt', sans-serif;
+    color: white;
+    text-decoration: none; }
+  footer .pFooter:hover {
+    color: #8b4991; }
+
+#leyendaHome {
+  display: flex;
+  justify-content: center;
+  background-color: black; }
+  #leyendaHome #leyendaHome2 {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #leyendaHome #leyendaHome2 .flechas {
+      width: calc(10px + 10vw);
+      height: calc(10px + 10vw);
+      transform: rotate(90deg); }
+    #leyendaHome #leyendaHome2 #banner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      #leyendaHome #leyendaHome2 #banner .bannerFont {
+        font-family: 'Darker Grotesque', sans-serif;
+        color: white;
+        text-align: center;
+        font-size: calc(10px + 1.5vw); }
+    #leyendaHome #leyendaHome2 #banner::before {
+      content: " ";
+      display: block;
+      border-top: 1px #614385 solid; }
+    #leyendaHome #leyendaHome2 #banner::after {
+      content: " ";
+      display: block;
+      border-bottom: 1px #614385 solid; }
+
+img {
+  width: 100%;
+  height: 100%; }
+
+@media screen and (min-width: 992px) {
+  header {
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: black; }
+    header nav {
+      display: flex;
+      flex-direction: row;
+      height: 65px;
+      border-bottom: 1.5px solid white; }
+      header nav #logo .kennaFont {
+        font-size: 30px;
+        width: 15%;
+        padding-top: 12px;
+        padding-left: 55px;
+        padding-bottom: 10px;
+        color: white; }
+        header nav #logo .kennaFont a {
+          text-decoration: none; }
+      header nav ul {
+        justify-content: flex-end;
+        align-items: center;
+        width: 88%;
+        padding-right: 50px;
+        height: 100%; }
+        header nav ul li {
+          padding-right: 15px;
+          padding-left: 15px;
+          font-size: 15px; }
+        header nav ul a:hover {
+          border-radius: 5px;
+          padding: 5px;
+          color: white;
+          transition: all 0.1s;
+          background-color: rgba(0, 0, 0, 0.2); }
+  footer #grillaFooter {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 120px;
+    grid-template-areas: "redes leyenda"; }
+    footer #grillaFooter #footerRedes {
+      grid-area: redes;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    footer #grillaFooter #footerRedes2 {
+      background-color: rgba(65, 65, 65, 0.39);
+      border-radius: 20px;
+      width: 150px;
+      height: 40px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center; }
+      footer #grillaFooter #footerRedes2 .bi-facebook {
+        font-size: 20px;
+        color: white; }
+      footer #grillaFooter #footerRedes2 .bi-instagram {
+        font-size: 20px;
+        color: white;
+        padding: 5px; }
+      footer #grillaFooter #footerRedes2 .bi-whatsapp {
+        font-size: 20px;
+        color: white; }
+      footer #grillaFooter #footerRedes2 .a:hover {
+        transform: scale(1.2, 1.2);
+        transition: all 0.2s; }
+      footer #grillaFooter #footerRedes2 i:hover {
+        transform: scale(1.2, 1.2);
+        transition: all 0.2s; }
+    footer #grillaFooter #contenedorUbi {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 5px; }
+      footer #grillaFooter #contenedorUbi .bi-geo-alt {
+        font-size: 20px;
+        color: white;
+        padding: 5px; }
+    footer #grillaFooter #leyendaFooter {
+      padding-top: 25px;
+      grid-area: leyenda;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      footer #grillaFooter #leyendaFooter .kennaFooter {
+        font-size: 12px; }
+      footer #grillaFooter #leyendaFooter .pFooter {
+        font-size: 15px; }
+  /*-----------MAIN*/
+  #leyendaHome {
+    padding: 20px; }
+    #leyendaHome #leyendaHome2 {
+      width: 80%; }
+      #leyendaHome #leyendaHome2 #banner {
+        width: 80%; }
+        #leyendaHome #leyendaHome2 #banner .bannerFont {
+          letter-spacing: 7px;
+          word-spacing: 10px; }
+      #leyendaHome #leyendaHome2 #banner::before {
+        padding-bottom: 30px; }
+      #leyendaHome #leyendaHome2 #banner::after {
+        padding-top: 30px; } }
