@@ -1,19 +1,23 @@
-*{
-    margin: 0;
-    padding: 0;
+/*header + nav + footer GENERAL para todas las páginas. Media queries: SMALL y LARGE*/
+@import "index.scss";
+
+.pFooter{
+    font-family: 'Prompt', sans-serif ;
+    color: white;
+    text-decoration: none;
+    &:hover{
+        color: rgb(139, 73, 145);
+    }
 }
 
-/*header + nav*/
-
 nav{
-
     #logo{
-
+        
         a{
             text-decoration: none;
         }
 
-        .kennaFont{
+        .kennaFontLogo{
             font-family: 'Prompt', sans-serif;
             font-weight: bold;
         }
@@ -34,80 +38,64 @@ nav{
             }
         }
     }
+
 }
 
 footer{
     background-color: rgb(0, 0, 0);
-    footer div a{
-        text-decoration: none;
-    }
-    #footerRedes2{
-        background-color: rgba(65, 65, 65, 0.39);
-        border-radius: 20px;
-    }
-    
-    #footerRedes2:hover{
-        background-color: rgba(87, 36, 92, 0.397);
-    }
-    .kennaFooter{
-        font-family: 'Prompt', sans-serif;
-        color: rgb(119, 118, 118);
-        text-align: center;
-    }
-    
-    .pFooter{
-        font-family: 'Prompt', sans-serif;
-        color: white;
-        text-decoration: none;
-    }
-    .pFooter:hover{
-        color: rgb(139, 73, 145);
-    }
-}
 
-#leyendaHome{
-    display: flex;
-    justify-content: center;
-    background-color: rgb(0, 0, 0);
+    #grillaFooter{
+        #footerRedes{
+            div a{
+                text-decoration: none;
+            }
 
+            #footerRedes2{
+                background-color: rgba(65, 65, 65, 0.39);
+                border-radius: 20px;
+                display: flex;
+                justify-content:space-evenly;
+                align-items: center;
 
-    #leyendaHome2{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+                .bi-facebook{
+                    font-size: 20px;
+                    color: white;
+                }
+                
+                .bi-instagram{
+                    font-size: 20px;
+                    color: white; 
+                    padding: 5px; 
+                }
+                
+                .bi-whatsapp{
+                    font-size: 20px;
+                    color: white;
+                }
+            }
 
-        .flechas{
-            width: calc(10px + 10vw);
-            height:calc(10px + 10vw) ;
-            transform: rotate(90deg);
+            #contenedorUbi{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .bi-geo-alt{
+                    color: white;
+                }
+            }
         }
-
-        #banner{
+        #leyendaFooter{
             display: flex;
             flex-direction: column;
             justify-content: center;
-
-            .bannerFont{
-                font-family: 'Darker Grotesque', sans-serif;
-                color: white;
+            align-items: center;
+            .fontLeyendaFooter{
+                font-family: 'Prompt', sans-serif;
+                color: rgb(119, 118, 118);
                 text-align: center;
-                font-size: calc(10px + 1.5vw);
             }
         }
-        #banner::before{
-            content: " ";
-            display: block;
-            border-top: 1px #614385 solid;
-        }
-            
-        #banner::after{
-            content: " ";
-            display: block;
-            border-bottom: 1px #614385 solid;
-        }
-    }
+    }    
 }
-
 
 img{
     width: 100%;
@@ -115,7 +103,117 @@ img{
 }
 
 
+/*----------------------- SMALL -----------------------*/
+@media only screen and (max-width: 600px){
+    /*INICIO header + nav*/
+    header{
+        width: 100%;
+        box-sizing: border-box;
+        background: rgb(15, 1, 31);
+
+        nav{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1.5px solid rgb(255, 255, 255);
+
+            #logo{
+                padding-top: 10px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .kennaFontLogo{
+                    font-size: 40px;
+                    color:rgb(139, 73, 145);
+                    text-align: center;
+                }
+            }
+
+            ul{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-left: 0;
+                height: 100px;
+
+
+                li a{
+                    font-size: 12px;
+                    color: white;
+                }  
+            }
+        }
+    }
+
+    /*INICIO footer*/
+
+    footer{
+        padding-top: 5px;
+        padding-bottom: 8px;
+        #grillaFooter{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            #footerRedes{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                #footerRedes2{
+                    background-color: rgba(65, 65, 65, 0.39);
+                    border-radius: 20px;
+                    width: 90px;
+                    height: 25px;
+
+                    .bi-facebook{
+                        font-size: 12px;
+                    }
+                    
+                    .bi-instagram{
+                        font-size: 12px;
+                    }
+                    
+                    .bi-whatsapp{
+                        font-size: 12px;
+                    }
+                }     
+
+                #contenedorUbi{
+                    padding-top: 5px;
+                    .pFooter{
+                        font-size: 12px;
+                    }
+                    .bi-geo-alt{
+                        font-size: 12px;
+                    }                    
+                }            
+            }
+
+            #leyendaFooter{
+                .fontLeyendaFooter{
+                    font-size: 10px;
+                }
+
+                p{
+                    margin-bottom: 0;                    
+                
+                    .pFooter{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 992px){
+    /*INICIO header + nav*/
     header{
         position: sticky;
         top: 0;
@@ -130,7 +228,7 @@ img{
             border-bottom: 1.5px solid rgb(255, 255, 255);
 
             #logo{
-                .kennaFont{
+                .kennaFontLogo{
                     font-size: 30px;
                     width: 15%;
                     padding-top: 12px;
@@ -160,19 +258,21 @@ img{
                 a:hover{
                     border-radius: 5px;
                     padding: 5px;
-                    color: white;
                     transition: all 0.1s;
-                    background-color: rgba(0, 0, 0, 0.2);
+                    background-color: rgba(154, 70, 161, 0.397);
+                    color: white;
                 }
             } 
         }
     }
-
+    /*INICIO footer*/
     footer{
+        padding-top: 10px;
+        padding-bottom: 10px;
         #grillaFooter{
             display: grid;
             grid-template-columns: 50% 50%;
-            grid-template-rows:120px;
+            grid-template-rows:105px;
             grid-template-areas:"redes leyenda";
 
             #footerRedes{
@@ -181,103 +281,56 @@ img{
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-            }
 
-            #footerRedes2{
-                background-color: rgba(65, 65, 65, 0.39);
-                border-radius: 20px;
-                width: 150px;
-                height: 40px;
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
+                #footerRedes2{
+                    background-color: rgba(65, 65, 65, 0.39);
+                    border-radius: 20px;
+                    width: 150px;
+                    height: 40px;
 
-                .bi-facebook{
-                    font-size: 20px;
-                    color: white;
+                    .bi-facebook{
+                        font-size: 20px;
+                    }
+                    
+                    .bi-instagram{
+                        font-size: 20px;
+                        padding: 5px; 
+                    }
+                    
+                    .bi-whatsapp{
+                        font-size: 20px;
+                    }
+                    .a:hover{
+                        transform: scale(1.2 , 1.2);
+                        transition: all 0.2s;
+                    }
                 }
-                
-                .bi-instagram{
-                    font-size: 20px;
-                    color: white; 
-                    padding: 5px; 
+                #footerRedes2:hover{
+                    background-color: rgba(87, 36, 92, 0.397);
                 }
-                
-                .bi-whatsapp{
-                    font-size: 20px;
-                    color: white;
-                }
-                
-        
-                .a:hover{
-                    transform: scale(1.2 , 1.2);
-                    transition: all 0.2s;
-                }
-                
-                i:hover{
-                    transform: scale(1.2 , 1.2);
-                    transition: all 0.2s;
-                }
-        
-            }
 
-            #contenedorUbi{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding-top: 5px;
-                .bi-geo-alt{
-                    font-size: 20px;
-                    color: white;
-                    padding: 5px;
+                #contenedorUbi{
+                    padding-top: 5px;
+                    .pFooter{
+                        font-size: 15px;
+                    }
+                    .bi-geo-alt{
+                        font-size: 20px;
+                        padding: 5px;
+                    }
                 }
             }
-
             #leyendaFooter{
-                padding-top: 25px;
                 grid-area: leyenda;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                .kennaFooter{
+                .fontLeyendaFooter{
                     font-size: 12px;
                 }
             
                 .pFooter{
                     font-size: 15px;
                 }
-            }
-            
+            }           
         }
 
     }
-    /*-----------MAIN*/
-    #leyendaHome{
-        padding: 20px;
-        
-        #leyendaHome2{
-            width: 80%;
-
-            #banner{
-                width: 80%;
-
-                .bannerFont{
-                letter-spacing: 7px;
-                word-spacing:10px;
-                }
-            }
-
-            #banner::before{
-                padding-bottom: 30px;
-            }
-                    
-            #banner::after{
-                padding-top: 30px;
-            }
-
-        }
-    }
-
 }

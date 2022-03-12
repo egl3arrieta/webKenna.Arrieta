@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------- INDEX - MAIN  -------------- */
+
+/*GENERAL*/
+
+#leyendaHome{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+
+    #leyendaHome2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .flechas{
+            width: calc(10px + 10vw);
+            height:calc(10px + 10vw) ;
+            transform: rotate(90deg);
+
+        }
+
+        #banner{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .bannerFont{
+                font-family: 'Darker Grotesque', sans-serif;
+                color: white;
+                text-align: center;
+                font-size: calc(10px + 1.5vw);
+            }
+        }
+        #banner::before{
+            content: " ";
+            display: block;
+            border-top: 1px #614385 solid;
+        }
+            
+        #banner::after{
+            content: " ";
+            display: block;
+            border-bottom: 1px #614385 solid;
+        }
+    }
+}
+
+/*SMALL*/
+@media only screen and (max-width: 600px){
+    #leyendaHome{
+        padding-top:  10px;
+
+        #leyendaHome2{
+            width: 90%;
+
+            #banner{
+                width: 85%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                .bannerFont{
+                    letter-spacing: 3px;
+                    word-spacing:5px;
+                }
+            }
+
+            #banner::before{
+                padding-bottom: 15px;
+            }
+
+            #banner::after{
+                padding-top: 15px;
+            }
+        }   
+    }
+}
+/*LARGE*/
+
+@media screen and (min-width: 992px){
+    #leyendaHome{
+        padding: 20px;
+        
+        #leyendaHome2{
+            width: 80%;
+
+            #banner{
+                width: 80%;
+
+                .bannerFont{
+                letter-spacing: 7px;
+                word-spacing:10px;
+                }
+            }
+
+            #banner::before{
+                padding-bottom: 30px;
+            }
+                    
+            #banner::after{
+                padding-top: 30px;
+            }
+
+        }
+    }
+
+}
