@@ -91,11 +91,7 @@ img{
 
 /*----------------------- SMALL -----------------------*/
 @media only screen and (max-width: 600px){
-    @mixin parrafosFooter  ($color , $fontSize) {
-        color: $color;
-        font-size: $fontSize;
-        font-family:'Prompt', sans-serif ;
-    }
+
 
     /*INICIO header + nav*/
     header{
@@ -206,11 +202,7 @@ img{
 
 
 @media screen and (min-width: 992px){
-    @mixin parrafosFooter  ($color , $fontSize) {
-        color: $color;
-        font-size: $fontSize;
-        font-family:'Prompt', sans-serif ;
-    }
+
     /*INICIO header + nav*/
     header{
         position: sticky;

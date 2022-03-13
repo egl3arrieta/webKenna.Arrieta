@@ -1,14 +1,24 @@
-/*CLASES FONT*/
-.pFooter{
-    text-decoration: none;
-}
+/*CLASES FONT - mixins*/
 
+/*header*/
 .kennaFontLogo{
     font-weight: bold;
 }
 
+/*footer*/
+.pFooter{
+    text-decoration: none;
+}
+
+/*titulos de otros html*/
 
 .titulos{
     font-family: 'Darker Grotesque', sans-serif;
     color: white;
+}
+
+@mixin parrafosFooter  ($color , $fontSize) {
+    color: $color;
+    font-size: $fontSize;
+    font-family:'Prompt', sans-serif ;
 }

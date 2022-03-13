@@ -68,13 +68,16 @@
       #leyendaHome #leyendaHome2 #banner::after {
         padding-top: 30px; } }
 
-/*CLASES FONT*/
-.pFooter {
-  text-decoration: none; }
-
+/*CLASES FONT - mixins*/
+/*header*/
 .kennaFontLogo {
   font-weight: bold; }
 
+/*footer*/
+.pFooter {
+  text-decoration: none; }
+
+/*titulos de otros html*/
 .titulos {
   font-family: 'Darker Grotesque', sans-serif;
   color: white; }
