@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 /* -------------- INDEX - MAIN  -------------- */
 
 /*GENERAL*/
@@ -29,9 +30,7 @@
             flex-direction: column;
             justify-content: center;
 
-            .bannerFont{
-                font-family: 'Darker Grotesque', sans-serif;
-                color: white;
+            .titulos{
                 text-align: center;
                 font-size: calc(10px + 1.5vw);
             }
@@ -62,7 +61,7 @@
                 width: 85%;
                 padding-top: 10px;
                 padding-bottom: 10px;
-                .bannerFont{
+                .titulos{
                     letter-spacing: 3px;
                     word-spacing:5px;
                 }
@@ -90,9 +89,9 @@
             #banner{
                 width: 80%;
 
-                .bannerFont{
-                letter-spacing: 7px;
-                word-spacing:10px;
+                .titulos{
+                    letter-spacing: 7px;
+                    word-spacing:10px;
                 }
             }
 

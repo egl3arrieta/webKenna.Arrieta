@@ -1,25 +1,12 @@
 /*header + nav + footer GENERAL para todas las páginas. Media queries: SMALL y LARGE*/
 @import "index.scss";
-
-.pFooter{
-    font-family: 'Prompt', sans-serif ;
-    color: white;
-    text-decoration: none;
-    &:hover{
-        color: rgb(139, 73, 145);
-    }
-}
+@import "variables.scss";
 
 nav{
     #logo{
         
         a{
             text-decoration: none;
-        }
-
-        .kennaFontLogo{
-            font-family: 'Prompt', sans-serif;
-            font-weight: bold;
         }
     }
 
@@ -46,6 +33,11 @@ footer{
 
     #grillaFooter{
         #footerRedes{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
             div a{
                 text-decoration: none;
             }
@@ -63,14 +55,11 @@ footer{
                 }
                 
                 .bi-instagram{
-                    font-size: 20px;
-                    color: white; 
-                    padding: 5px; 
+                    @extend .bi-facebook;
                 }
                 
                 .bi-whatsapp{
-                    font-size: 20px;
-                    color: white;
+                    @extend .bi-facebook;
                 }
             }
 
@@ -79,18 +68,14 @@ footer{
                 justify-content: center;
                 align-items: center;
                 .bi-geo-alt{
+                    font-size: 20px;
                     color: white;
                 }
             }
         }
         #leyendaFooter{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @extend #footerRedes;
             .fontLeyendaFooter{
-                font-family: 'Prompt', sans-serif;
-                color: rgb(119, 118, 118);
                 text-align: center;
             }
         }
@@ -103,8 +88,15 @@ img{
 }
 
 
+
 /*----------------------- SMALL -----------------------*/
 @media only screen and (max-width: 600px){
+    @mixin parrafosFooter  ($color , $fontSize) {
+        color: $color;
+        font-size: $fontSize;
+        font-family:'Prompt', sans-serif ;
+    }
+
     /*INICIO header + nav*/
     header{
         width: 100%;
@@ -116,7 +108,7 @@ img{
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-bottom: 1.5px solid rgb(255, 255, 255);
+            border-bottom: 1px solid rgb(255, 255, 255);
 
             #logo{
                 padding-top: 10px;
@@ -125,8 +117,7 @@ img{
                 justify-content: center;
 
                 .kennaFontLogo{
-                    font-size: 40px;
-                    color:rgb(139, 73, 145);
+                    @include parrafosFooter( rgb(154, 70, 161) , 35px );
                     text-align: center;
                 }
             }
@@ -143,6 +134,9 @@ img{
                     font-size: 12px;
                     color: white;
                 }  
+                a:hover{
+                    color: rgb(154, 70, 161);
+                }
             }
         }
     }
@@ -160,11 +154,6 @@ img{
 
             #footerRedes{
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
                 #footerRedes2{
                     background-color: rgba(65, 65, 65, 0.39);
                     border-radius: 20px;
@@ -176,35 +165,38 @@ img{
                     }
                     
                     .bi-instagram{
-                        font-size: 12px;
+                        @extend .bi-facebook;
                     }
                     
                     .bi-whatsapp{
-                        font-size: 12px;
+                        @extend .bi-facebook;
                     }
                 }     
 
                 #contenedorUbi{
-                    padding-top: 5px;
+                    padding-top: 10px;
                     .pFooter{
-                        font-size: 12px;
+                        @include parrafosFooter(white, 12px )
                     }
                     .bi-geo-alt{
-                        font-size: 12px;
+                        font-size: 10px;
+                        color: white;
+                        padding-right: 5px;
                     }                    
                 }            
             }
 
             #leyendaFooter{
                 .fontLeyendaFooter{
-                    font-size: 10px;
+                    padding-top: 5px;
+                    @include parrafosFooter(gray, 10px )
                 }
 
                 p{
                     margin-bottom: 0;                    
                 
                     .pFooter{
-                        font-size: 12px;
+                        @include parrafosFooter(white, 12px );
                     }
                 }
             }
@@ -212,7 +204,13 @@ img{
     }
 }
 
+
 @media screen and (min-width: 992px){
+    @mixin parrafosFooter  ($color , $fontSize) {
+        color: $color;
+        font-size: $fontSize;
+        font-family:'Prompt', sans-serif ;
+    }
     /*INICIO header + nav*/
     header{
         position: sticky;
@@ -229,13 +227,12 @@ img{
 
             #logo{
                 .kennaFontLogo{
-                    font-size: 30px;
+                    @include parrafosFooter(white, 30px );
                     width: 15%;
                     padding-top: 12px;
                     padding-left: 55px;
                     padding-bottom: 10px;
-                    color: white;
-                    
+ 
                     a{
                         text-decoration: none;
                     }
@@ -268,7 +265,6 @@ img{
     /*INICIO footer*/
     footer{
         padding-top: 10px;
-        padding-bottom: 10px;
         #grillaFooter{
             display: grid;
             grid-template-columns: 50% 50%;
@@ -277,10 +273,6 @@ img{
 
             #footerRedes{
                 grid-area: redes;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
 
                 #footerRedes2{
                     background-color: rgba(65, 65, 65, 0.39);
@@ -293,12 +285,11 @@ img{
                     }
                     
                     .bi-instagram{
-                        font-size: 20px;
-                        padding: 5px; 
+                        @extend .bi-facebook;
                     }
                     
                     .bi-whatsapp{
-                        font-size: 20px;
+                        @extend .bi-facebook;
                     }
                     .a:hover{
                         transform: scale(1.2 , 1.2);
@@ -312,22 +303,29 @@ img{
                 #contenedorUbi{
                     padding-top: 5px;
                     .pFooter{
-                        font-size: 15px;
+                        @include parrafosFooter(white,15px );
+                        &:hover{
+                            color: rgb(139, 73, 145);
+                        }
                     }
                     .bi-geo-alt{
-                        font-size: 20px;
+                        @extend .bi-facebook;
                         padding: 5px;
                     }
                 }
             }
             #leyendaFooter{
+                padding-top: 5px;
                 grid-area: leyenda;
                 .fontLeyendaFooter{
-                    font-size: 12px;
+                    @include parrafosFooter(gray, 12px);
                 }
             
                 .pFooter{
-                    font-size: 15px;
+                    @include parrafosFooter(white,15px );
+                    &:hover{
+                        color: rgb(139, 73, 145);
+                    }
                 }
             }           
         }
