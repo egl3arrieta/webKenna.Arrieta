@@ -3,7 +3,11 @@
     padding: 0;
 }
 
+p{
+    margin-bottom: 0;
+}
 
+@import "variables.scss";
 /* -------------- INDEX - MAIN  -------------- */
 
 /*GENERAL*/
@@ -19,8 +23,8 @@
         align-items: center;
 
         .flechas{
-            width: calc(10px + 10vw);
-            height:calc(10px + 10vw) ;
+            width: calc(13px + 10vw);
+            height:calc(13px + 10vw) ;
             transform: rotate(90deg);
 
         }
@@ -29,10 +33,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-
-            .titulos{
+ 
+            .tituloHome{
                 text-align: center;
-                font-size: calc(10px + 1.5vw);
+                @include titulosParrafosGeneral ($fontTitulos, $colorWhiteFont, calc(13px + 2.5vw));
             }
         }
         #banner::before{
@@ -51,17 +55,33 @@
 
 /*SMALL*/
 @media only screen and (max-width: 600px){
+    #imgHome{
+        img{
+            width: 100%;
+            height: 350px;
+            object-fit: cover;         
+        }
+
+    }
+
     #leyendaHome{
         padding-top:  10px;
 
         #leyendaHome2{
             width: 90%;
 
+            .flechas{
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
             #banner{
                 width: 85%;
                 padding-top: 10px;
                 padding-bottom: 10px;
-                .titulos{
+                .tituloHome{
                     letter-spacing: 3px;
                     word-spacing:5px;
                 }
@@ -80,6 +100,10 @@
 /*LARGE*/
 
 @media screen and (min-width: 992px){
+    img{
+        width: 100%;
+        height: 100%;
+    }
     #leyendaHome{
         padding: 20px;
         
@@ -89,9 +113,9 @@
             #banner{
                 width: 80%;
 
-                .titulos{
+                .tituloHome{
                     letter-spacing: 7px;
-                    word-spacing:10px;
+                    word-spacing:13px;
                 }
             }
 

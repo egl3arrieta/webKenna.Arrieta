@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import "variables.scss";
+
+/*CONTACTO- General y Media Queries SM y LG
+Recordatorio: titulos y parrafos en la hoja estilos.scss*/
+
+#titulosContenedor{
+    padding-top: 15px;
+}
+/*FORMULARIO*/
+#contenedorButton{
+    display: flex;
+    justify-content: center;
+    padding-top:  10px;
+    padding-bottom: 20px;
+
+    .button{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+legend{
+    @include titulosParrafosGeneral ($fontParrafos , black , calc(13px + 1vw));
+    text-align: center;
+}
+
+form{
+    .mb-3{
+        width: 50%;
+    }
+}
+
+

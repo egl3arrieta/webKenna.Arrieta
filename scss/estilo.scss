@@ -1,10 +1,17 @@
-/*header + nav + footer GENERAL para todas las páginas. Media queries: SMALL y LARGE*/
+/*header + nav + footer GENERAL para todas las páginas. Media queries: SMALL y LARGE
+    Titulos de las Pags incluidos (final de la hoja)*/
 @import "index.scss";
+@import "nosotros.scss";
 @import "variables.scss";
-
+@import "cafeteriaBar.scss";
+@import "contacto.scss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 nav{
     #logo{
-        
+        .kennaFontLogo{
+            font-weight: bold;
+        }
+
         a{
             text-decoration: none;
         }
@@ -15,12 +22,12 @@ nav{
         list-style-type:none; 
 
         li{
-            color: white;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: $colorWhiteFont;
+            font-family: $liFont;
             text-decoration: none;
 
             a{
-                color: white;
+                color: $colorWhiteFont;
                 text-decoration: none;
             }
         }
@@ -33,10 +40,7 @@ footer{
 
     #grillaFooter{
         #footerRedes{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include displayFlex (column);
 
             div a{
                 text-decoration: none;
@@ -50,8 +54,7 @@ footer{
                 align-items: center;
 
                 .bi-facebook{
-                    font-size: 20px;
-                    color: white;
+                    color: $colorIcon;
                 }
                 
                 .bi-instagram{
@@ -64,17 +67,20 @@ footer{
             }
 
             #contenedorUbi{
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include displayFlex (row);
                 .bi-geo-alt{
                     font-size: 20px;
-                    color: white;
+                    color: $colorIcon;
                 }
             }
         }
         #leyendaFooter{
-            @extend #footerRedes;
+            @include displayFlex (column);
+
+            .pFooter{
+                text-decoration: none;
+            }
+            
             .fontLeyendaFooter{
                 text-align: center;
             }
@@ -82,10 +88,6 @@ footer{
     }    
 }
 
-img{
-    width: 100%;
-    height: 100%;
-}
 
 
 
@@ -100,10 +102,7 @@ img{
         background: rgb(15, 1, 31);
 
         nav{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include displayFlex (column);
             border-bottom: 1px solid rgb(255, 255, 255);
 
             #logo{
@@ -113,7 +112,7 @@ img{
                 justify-content: center;
 
                 .kennaFontLogo{
-                    @include parrafosFooter( rgb(154, 70, 161) , 35px );
+                    @include titulosParrafosGeneral($fontLogo , rgb(139, 73, 145), 35px) ;
                     text-align: center;
                 }
             }
@@ -128,10 +127,10 @@ img{
 
                 li a{
                     font-size: 12px;
-                    color: white;
+                    color: $colorWhiteFont;
                 }  
                 a:hover{
-                    color: rgb(154, 70, 161);
+                    color: $colorHoverFooterNav;
                 }
             }
         }
@@ -140,43 +139,40 @@ img{
     /*INICIO footer*/
 
     footer{
-        padding-top: 5px;
-        padding-bottom: 8px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         #grillaFooter{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            @include displayFlex (column);
 
             #footerRedes{
                 width: 100%;
                 #footerRedes2{
                     background-color: rgba(65, 65, 65, 0.39);
                     border-radius: 20px;
-                    width: 90px;
-                    height: 25px;
+                    width: 130px;
+                    height: 40px;
 
                     .bi-facebook{
-                        font-size: 12px;
+                        font-size: 18px;
                     }
                     
                     .bi-instagram{
-                        @extend .bi-facebook;
+                        font-size: 18px;
                     }
                     
                     .bi-whatsapp{
-                        @extend .bi-facebook;
+                        font-size: 18px;
                     }
                 }     
 
                 #contenedorUbi{
                     padding-top: 10px;
                     .pFooter{
-                        @include parrafosFooter(white, 12px )
+                        @include titulosParrafosGeneral ($fontParrafos , $colorWhiteFont , 15px);
                     }
                     .bi-geo-alt{
-                        font-size: 10px;
-                        color: white;
+                        font-size: 15px;
+                        color: $colorIcon;
                         padding-right: 5px;
                     }                    
                 }            
@@ -185,24 +181,20 @@ img{
             #leyendaFooter{
                 .fontLeyendaFooter{
                     padding-top: 5px;
-                    @include parrafosFooter(gray, 10px )
+                    @include titulosParrafosGeneral ($fontParrafos , gray , 13px);
                 }
 
-                p{
-                    margin-bottom: 0;                    
-                
-                    .pFooter{
-                        @include parrafosFooter(white, 12px );
-                    }
+                .pFooter{
+                    @include titulosParrafosGeneral ($fontParrafos , $colorWhiteFont , 13px);
                 }
             }
         }
     }
 }
 
-
+/*----------------------- LARGE -----------------------*/
 @media screen and (min-width: 992px){
-
+ 
     /*INICIO header + nav*/
     header{
         position: sticky;
@@ -219,7 +211,7 @@ img{
 
             #logo{
                 .kennaFontLogo{
-                    @include parrafosFooter(white, 30px );
+                    @include titulosParrafosGeneral($fontLogo , $colorWhiteFont, 30px) ;
                     width: 15%;
                     padding-top: 12px;
                     padding-left: 55px;
@@ -249,7 +241,7 @@ img{
                     padding: 5px;
                     transition: all 0.1s;
                     background-color: rgba(154, 70, 161, 0.397);
-                    color: white;
+                    color: $colorWhiteFont;
                 }
             } 
         }
@@ -277,11 +269,11 @@ img{
                     }
                     
                     .bi-instagram{
-                        @extend .bi-facebook;
+                        font-size: 20px;
                     }
                     
                     .bi-whatsapp{
-                        @extend .bi-facebook;
+                        font-size: 20px;
                     }
                     .a:hover{
                         transform: scale(1.2 , 1.2);
@@ -293,15 +285,15 @@ img{
                 }
 
                 #contenedorUbi{
-                    padding-top: 5px;
+                    padding-top: 8px;
                     .pFooter{
-                        @include parrafosFooter(white,15px );
+                        @include titulosParrafosGeneral($fontParrafos , $colorWhiteFont , 15px);
                         &:hover{
-                            color: rgb(139, 73, 145);
+                            color: $colorHoverFooterNav;
                         }
                     }
                     .bi-geo-alt{
-                        @extend .bi-facebook;
+                        font-size: 20px;
                         padding: 5px;
                     }
                 }
@@ -309,18 +301,46 @@ img{
             #leyendaFooter{
                 padding-top: 5px;
                 grid-area: leyenda;
+                p{
+                    padding-bottom: 5px;
+                    .pFooter{
+
+                        @include titulosParrafosGeneral ($fontParrafos , $colorWhiteFont , 15px);
+                        &:hover{
+                            color: $colorHoverFooterNav;
+                        }
+                    }                    
+                }
+
                 .fontLeyendaFooter{
-                    @include parrafosFooter(gray, 12px);
+                    @include titulosParrafosGeneral ($fontParrafos , gray , 12px) ;
+                    padding-top: 5px;
                 }
             
-                .pFooter{
-                    @include parrafosFooter(white,15px );
-                    &:hover{
-                        color: rgb(139, 73, 145);
-                    }
-                }
+
             }           
         }
 
     }
+}
+
+/*TITULOS*/
+
+#titulosContenedor{
+    display: block;
+    .titulosHtml{
+        @include titulosParrafosGeneral ($fontParrafos, $colorWhiteFont, calc(20px + 1.5vw));
+        letter-spacing: 5px;
+        text-align: center;
+        
+    }  
+}
+.parrafosHtml{
+    @include titulosParrafosGeneral ($fontParrafos, black, calc(13px + 0.8vw));
+    text-align: center;
+
+}
+.leyendaHtmlFont{
+    @include titulosParrafosGeneral ($fontParrafos , black , calc(15px + 1.5vw));
+    text-align: center;
 }

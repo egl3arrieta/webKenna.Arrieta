@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import "variables.scss";
+
+/*NOSOTROS - General y Media Queries SM y LG
+Recordatorio: titulos y parrafos en la hoja estilos.scss*/
+
+#titulosContenedor{
+    padding-top: 15px;
+}
+
+#grillaNosotros{
+    #contenedorCasillasNos{
+        justify-content: center;
+        margin-right: 0;
+        margin-left: 0;
+        #carouselExampleControls{
+            img{
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/*----------------------- SMALL -----------------------*/
+@media only screen and (max-width: 600px){
+    #grillaNosotros{
+        #contenedorCasillasNos{
+            #carouselExampleControls{
+                height: 250px;
+            }
+
+            #leyendaNosotros2{
+                visibility:hidden;
+            }
+        }
+    }
+
+    #presentacionNosotros{
+        width: 95%;
+        padding-bottom: 10px;
+    }
+}
+/*----------------------- LARGE -----------------------*/
+@media screen and (min-width: 992px){
+    #titulosContenedor{
+        padding-bottom: 10px;
+    }
+
+    #grillaNosotros{
+        width: 100%;
+        #contenedorCasillasNos{
+            #leyendaNosotros{
+                @include displayFlex (row);
+                width: 18% ;
+            }
+            #leyendaNosotros2{
+                @include displayFlex (row);
+                width: 18% ;
+            }
+
+            #carouselExampleControls{
+                width: 60%;
+                height: 400px;
+            }
+        }
+    }
+    #presentacionNosotros{
+        width: 60%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}

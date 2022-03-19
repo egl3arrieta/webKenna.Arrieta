@@ -1,24 +1,34 @@
-/*CLASES FONT - mixins*/
 
-/*header*/
-.kennaFontLogo{
-    font-weight: bold;
-}
+/*VARIABLES*/
+$colorWhiteFont: white;
+$colorIcon: white;
+$colorParrafos: black;
+$colorHoverFooterNav: rgb(139, 73, 145);
+$fontParrafos: 'Prompt', sans-serif;
+$fontTitulos: 'Darker Grotesque', sans-serif;
+$liFont: Verdana, Geneva, Tahoma, sans-serif;
+$fontLogo: 'Prompt', sans-serif;
 
-/*footer*/
-.pFooter{
-    text-decoration: none;
-}
+.backgroundHtml{
+    background: #614385;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+} 
 
-/*titulos de otros html*/
+/*MIXIN*/
 
-.titulos{
-    font-family: 'Darker Grotesque', sans-serif;
-    color: white;
-}
 
-@mixin parrafosFooter  ($color , $fontSize) {
+@mixin titulosParrafosGeneral ($fontFamily , $color , $fontSize) {
+    font-family: $fontFamily;
     color: $color;
     font-size: $fontSize;
-    font-family:'Prompt', sans-serif ;
 }
+
+
+@mixin displayFlex ($flexDirection){
+    flex-direction: $flexDirection;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

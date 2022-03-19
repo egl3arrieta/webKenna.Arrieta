@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import "variables.scss";
+
+/*CAFETERIA y BAR- General y Media Queries SM y LG
+Recordatorio: titulos y parrafos en la hoja estilos.scss*/
+
+#titulosContenedor{
+    padding-top: 15px;
+}
+
+
+#grillaCafeBar{
+    display: flex;
+    justify-content: center;
+    #contededorCasillasCafeBar{
+        width: 95%;
+        margin-right: 0;
+        margin-left: 0;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/*----------------------- SMALL -----------------------*/
+@media only screen and (max-width: 600px){
+    img{
+        object-fit: cover;
+        width: 100%;
+    }
+    #grillaCafeBar{
+        #contededorCasillasCafeBar{    
+            grid-template-columns: 50% 50% ;
+            grid-template-areas:"leyenda1 leyenda1"
+                                "foto1 foto2"
+                                "foto3 foto4"
+                                "foto5 foto6"
+                                "leyenda2 leyenda2";
+            #leyendaHtml1{
+                grid-area: leyenda1;
+            }
+            #leyendaHtml2{
+                padding-top: 5px;
+                grid-area: leyenda2;
+            }
+            #foto1{
+                grid-area: foto1; 
+            }
+            #foto2{
+                grid-area: foto2;
+            }
+            #foto3{
+                grid-area: foto3; 
+            }
+            #foto4{
+                grid-area: foto4;
+            }
+            #foto5{
+                grid-area: foto5; 
+            }
+            #foto6{
+                grid-area: foto6;
+            } 
+        }
+    }
+
+}
+
+
+
+
+
+/*----------------------- LARGE -----------------------*/
+@media screen and (min-width: 992px){
+    #titulosContenedor{
+        padding-bottom: 10px;
+    }
+
+    /*comparte estilo de grilla con BAR*/
+    #grillaCafeBar{
+        #contededorCasillasCafeBar{
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-areas:"leyenda1 foto1 foto2 foto3 leyenda2"
+                                "leyenda1 foto4 foto5 foto6 leyenda2";
+            #leyendaHtml1{
+                grid-area: leyenda1;
+            }
+            #leyendaHtml2{
+                grid-area: leyenda2;
+            }
+            #foto1{
+                grid-area: foto1; 
+            }
+            #foto2{
+                grid-area: foto2;
+            }
+            #foto3{
+                grid-area: foto3; 
+            }
+            #foto4{
+                grid-area: foto4;
+            }
+            #foto5{
+                grid-area: foto5; 
+            }
+            #foto6{
+                grid-area: foto6;
+            } 
+        }
+    }
+}

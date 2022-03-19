@@ -1,9 +1,24 @@
 @charset "UTF-8";
-/*header + nav + footer GENERAL para todas las páginas. Media queries: SMALL y LARGE*/
+/*header + nav + footer GENERAL para todas las páginas. Media queries: SMALL y LARGE
+    Titulos de las Pags incluidos (final de la hoja)*/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 * {
   margin: 0;
   padding: 0; }
 
+p {
+  margin-bottom: 0; }
+
+/*VARIABLES*/
+.backgroundHtml {
+  background: #614385;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #516395, #614385);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #516395, #614385);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+/*MIXIN*/
 /* -------------- INDEX - MAIN  -------------- */
 /*GENERAL*/
 #leyendaHome {
@@ -15,16 +30,18 @@
     justify-content: center;
     align-items: center; }
     #leyendaHome #leyendaHome2 .flechas {
-      width: calc(10px + 10vw);
-      height: calc(10px + 10vw);
+      width: calc(13px + 10vw);
+      height: calc(13px + 10vw);
       transform: rotate(90deg); }
     #leyendaHome #leyendaHome2 #banner {
       display: flex;
       flex-direction: column;
       justify-content: center; }
-      #leyendaHome #leyendaHome2 #banner .titulos {
+      #leyendaHome #leyendaHome2 #banner .tituloHome {
         text-align: center;
-        font-size: calc(10px + 1.5vw); }
+        font-family: "Darker Grotesque", sans-serif;
+        color: white;
+        font-size: calc(13px + 2.5vw); }
     #leyendaHome #leyendaHome2 #banner::before {
       content: " ";
       display: block;
@@ -36,15 +53,22 @@
 
 /*SMALL*/
 @media only screen and (max-width: 600px) {
+  #imgHome img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; }
   #leyendaHome {
     padding-top: 10px; }
     #leyendaHome #leyendaHome2 {
       width: 90%; }
+      #leyendaHome #leyendaHome2 .flechas img {
+        width: 100%;
+        height: 100%; }
       #leyendaHome #leyendaHome2 #banner {
         width: 85%;
         padding-top: 10px;
         padding-bottom: 10px; }
-        #leyendaHome #leyendaHome2 #banner .titulos {
+        #leyendaHome #leyendaHome2 #banner .tituloHome {
           letter-spacing: 3px;
           word-spacing: 5px; }
       #leyendaHome #leyendaHome2 #banner::before {
@@ -54,33 +78,216 @@
 
 /*LARGE*/
 @media screen and (min-width: 992px) {
+  img {
+    width: 100%;
+    height: 100%; }
   #leyendaHome {
     padding: 20px; }
     #leyendaHome #leyendaHome2 {
       width: 80%; }
       #leyendaHome #leyendaHome2 #banner {
         width: 80%; }
-        #leyendaHome #leyendaHome2 #banner .titulos {
+        #leyendaHome #leyendaHome2 #banner .tituloHome {
           letter-spacing: 7px;
-          word-spacing: 10px; }
+          word-spacing: 13px; }
       #leyendaHome #leyendaHome2 #banner::before {
         padding-bottom: 30px; }
       #leyendaHome #leyendaHome2 #banner::after {
         padding-top: 30px; } }
 
-/*CLASES FONT - mixins*/
-/*header*/
-.kennaFontLogo {
+* {
+  margin: 0;
+  padding: 0; }
+
+/*VARIABLES*/
+.backgroundHtml {
+  background: #614385;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #516395, #614385);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #516395, #614385);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+/*MIXIN*/
+/*NOSOTROS - General y Media Queries SM y LG
+Recordatorio: titulos y parrafos en la hoja estilos.scss*/
+#titulosContenedor {
+  padding-top: 15px; }
+
+#grillaNosotros #contenedorCasillasNos {
+  justify-content: center;
+  margin-right: 0;
+  margin-left: 0; }
+  #grillaNosotros #contenedorCasillasNos #carouselExampleControls img {
+    object-fit: cover; }
+
+/*----------------------- SMALL -----------------------*/
+@media only screen and (max-width: 600px) {
+  #grillaNosotros #contenedorCasillasNos #carouselExampleControls {
+    height: 250px; }
+  #grillaNosotros #contenedorCasillasNos #leyendaNosotros2 {
+    visibility: hidden; }
+  #presentacionNosotros {
+    width: 95%;
+    padding-bottom: 10px; } }
+
+/*----------------------- LARGE -----------------------*/
+@media screen and (min-width: 992px) {
+  #titulosContenedor {
+    padding-bottom: 10px; }
+  #grillaNosotros {
+    width: 100%; }
+    #grillaNosotros #contenedorCasillasNos #leyendaNosotros {
+      flex-direction: row;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 18%; }
+    #grillaNosotros #contenedorCasillasNos #leyendaNosotros2 {
+      flex-direction: row;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 18%; }
+    #grillaNosotros #contenedorCasillasNos #carouselExampleControls {
+      width: 60%;
+      height: 400px; }
+  #presentacionNosotros {
+    width: 60%;
+    padding-top: 15px;
+    padding-bottom: 15px; } }
+
+/*VARIABLES*/
+.backgroundHtml {
+  background: #614385;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #516395, #614385);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #516395, #614385);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+/*MIXIN*/
+* {
+  margin: 0;
+  padding: 0; }
+
+/*VARIABLES*/
+.backgroundHtml {
+  background: #614385;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #516395, #614385);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #516395, #614385);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+/*MIXIN*/
+/*CAFETERIA y BAR- General y Media Queries SM y LG
+Recordatorio: titulos y parrafos en la hoja estilos.scss*/
+#titulosContenedor {
+  padding-top: 15px; }
+
+#grillaCafeBar {
+  display: flex;
+  justify-content: center; }
+  #grillaCafeBar #contededorCasillasCafeBar {
+    width: 95%;
+    margin-right: 0;
+    margin-left: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center; }
+
+/*----------------------- SMALL -----------------------*/
+@media only screen and (max-width: 600px) {
+  img {
+    object-fit: cover;
+    width: 100%; }
+  #grillaCafeBar #contededorCasillasCafeBar {
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "leyenda1 leyenda1" "foto1 foto2" "foto3 foto4" "foto5 foto6" "leyenda2 leyenda2"; }
+    #grillaCafeBar #contededorCasillasCafeBar #leyendaHtml1 {
+      grid-area: leyenda1; }
+    #grillaCafeBar #contededorCasillasCafeBar #leyendaHtml2 {
+      padding-top: 5px;
+      grid-area: leyenda2; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto1 {
+      grid-area: foto1; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto2 {
+      grid-area: foto2; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto3 {
+      grid-area: foto3; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto4 {
+      grid-area: foto4; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto5 {
+      grid-area: foto5; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto6 {
+      grid-area: foto6; } }
+
+/*----------------------- LARGE -----------------------*/
+@media screen and (min-width: 992px) {
+  #titulosContenedor {
+    padding-bottom: 10px; }
+  /*comparte estilo de grilla con BAR*/
+  #grillaCafeBar #contededorCasillasCafeBar {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "leyenda1 foto1 foto2 foto3 leyenda2" "leyenda1 foto4 foto5 foto6 leyenda2"; }
+    #grillaCafeBar #contededorCasillasCafeBar #leyendaHtml1 {
+      grid-area: leyenda1; }
+    #grillaCafeBar #contededorCasillasCafeBar #leyendaHtml2 {
+      grid-area: leyenda2; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto1 {
+      grid-area: foto1; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto2 {
+      grid-area: foto2; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto3 {
+      grid-area: foto3; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto4 {
+      grid-area: foto4; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto5 {
+      grid-area: foto5; }
+    #grillaCafeBar #contededorCasillasCafeBar #foto6 {
+      grid-area: foto6; } }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+/*VARIABLES*/
+.backgroundHtml {
+  background: #614385;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #516395, #614385);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #516395, #614385);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+/*MIXIN*/
+/*CONTACTO- General y Media Queries SM y LG
+Recordatorio: titulos y parrafos en la hoja estilos.scss*/
+#titulosContenedor {
+  padding-top: 15px; }
+
+/*FORMULARIO*/
+#contenedorButton {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 20px; }
+  #contenedorButton .button {
+    padding-right: 20px;
+    padding-left: 20px; }
+
+legend {
+  font-family: "Prompt", sans-serif;
+  color: black;
+  font-size: calc(13px + 1vw);
+  text-align: center; }
+
+form .mb-3 {
+  width: 50%; }
+
+nav #logo .kennaFontLogo {
   font-weight: bold; }
-
-/*footer*/
-.pFooter {
-  text-decoration: none; }
-
-/*titulos de otros html*/
-.titulos {
-  font-family: 'Darker Grotesque', sans-serif;
-  color: white; }
 
 nav #logo a {
   text-decoration: none; }
@@ -98,35 +305,38 @@ nav ul {
 
 footer {
   background-color: black; }
-  footer #grillaFooter #footerRedes, footer #grillaFooter #leyendaFooter {
-    display: flex;
+  footer #grillaFooter #footerRedes {
     flex-direction: column;
+    display: flex;
     justify-content: center;
     align-items: center; }
-    footer #grillaFooter #footerRedes div a, footer #grillaFooter #leyendaFooter div a {
+    footer #grillaFooter #footerRedes div a {
       text-decoration: none; }
-    footer #grillaFooter #footerRedes #footerRedes2, footer #grillaFooter #leyendaFooter #footerRedes2 {
+    footer #grillaFooter #footerRedes #footerRedes2 {
       background-color: rgba(65, 65, 65, 0.39);
       border-radius: 20px;
       display: flex;
       justify-content: space-evenly;
       align-items: center; }
-      footer #grillaFooter #footerRedes #footerRedes2 .bi-facebook, footer #grillaFooter #leyendaFooter #footerRedes2 .bi-facebook, footer #grillaFooter #footerRedes #footerRedes2 .bi-instagram, footer #grillaFooter #leyendaFooter #footerRedes2 .bi-instagram, footer #grillaFooter #footerRedes #footerRedes2 .bi-whatsapp, footer #grillaFooter #leyendaFooter #footerRedes2 .bi-whatsapp, footer #grillaFooter #footerRedes #footerRedes2 #contenedorUbi .bi-geo-alt, footer #grillaFooter #footerRedes #contenedorUbi #footerRedes2 .bi-geo-alt, footer #grillaFooter #leyendaFooter #footerRedes2 #contenedorUbi .bi-geo-alt, footer #grillaFooter #leyendaFooter #contenedorUbi #footerRedes2 .bi-geo-alt {
-        font-size: 20px;
+      footer #grillaFooter #footerRedes #footerRedes2 .bi-facebook, footer #grillaFooter #footerRedes #footerRedes2 .bi-instagram, footer #grillaFooter #footerRedes #footerRedes2 .bi-whatsapp {
         color: white; }
-    footer #grillaFooter #footerRedes #contenedorUbi, footer #grillaFooter #leyendaFooter #contenedorUbi {
+    footer #grillaFooter #footerRedes #contenedorUbi {
+      flex-direction: row;
       display: flex;
       justify-content: center;
       align-items: center; }
-      footer #grillaFooter #footerRedes #contenedorUbi .bi-geo-alt, footer #grillaFooter #leyendaFooter #contenedorUbi .bi-geo-alt {
+      footer #grillaFooter #footerRedes #contenedorUbi .bi-geo-alt {
         font-size: 20px;
         color: white; }
-  footer #grillaFooter #leyendaFooter .fontLeyendaFooter {
-    text-align: center; }
-
-img {
-  width: 100%;
-  height: 100%; }
+  footer #grillaFooter #leyendaFooter {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    footer #grillaFooter #leyendaFooter .pFooter {
+      text-decoration: none; }
+    footer #grillaFooter #leyendaFooter .fontLeyendaFooter {
+      text-align: center; }
 
 /*----------------------- SMALL -----------------------*/
 @media only screen and (max-width: 600px) {
@@ -136,8 +346,8 @@ img {
     box-sizing: border-box;
     background: #0f011f; }
     header nav {
-      display: flex;
       flex-direction: column;
+      display: flex;
       justify-content: center;
       align-items: center;
       border-bottom: 1px solid white; }
@@ -147,9 +357,9 @@ img {
         display: flex;
         justify-content: center; }
         header nav #logo .kennaFontLogo {
-          color: #9a46a1;
+          font-family: "Prompt", sans-serif;
+          color: #8b4991;
           font-size: 35px;
-          font-family: 'Prompt', sans-serif;
           text-align: center; }
       header nav ul {
         flex-direction: column;
@@ -161,47 +371,50 @@ img {
           font-size: 12px;
           color: white; }
         header nav ul a:hover {
-          color: #9a46a1; }
+          color: #8b4991; }
   /*INICIO footer*/
   footer {
-    padding-top: 5px;
-    padding-bottom: 8px; }
+    padding-top: 15px;
+    padding-bottom: 15px; }
     footer #grillaFooter {
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center; }
-      footer #grillaFooter #footerRedes, footer #grillaFooter #leyendaFooter {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      footer #grillaFooter #footerRedes {
         width: 100%; }
-        footer #grillaFooter #footerRedes #footerRedes2, footer #grillaFooter #leyendaFooter #footerRedes2 {
+        footer #grillaFooter #footerRedes #footerRedes2 {
           background-color: rgba(65, 65, 65, 0.39);
           border-radius: 20px;
-          width: 90px;
-          height: 25px; }
-          footer #grillaFooter #footerRedes #footerRedes2 .bi-facebook, footer #grillaFooter #leyendaFooter #footerRedes2 .bi-facebook, footer #grillaFooter #footerRedes #footerRedes2 .bi-instagram, footer #grillaFooter #leyendaFooter #footerRedes2 .bi-instagram, footer #grillaFooter #footerRedes #footerRedes2 .bi-whatsapp, footer #grillaFooter #leyendaFooter #footerRedes2 .bi-whatsapp, footer #grillaFooter #footerRedes #footerRedes2 #contenedorUbi .bi-geo-alt, footer #grillaFooter #footerRedes #contenedorUbi #footerRedes2 .bi-geo-alt, footer #grillaFooter #leyendaFooter #footerRedes2 #contenedorUbi .bi-geo-alt, footer #grillaFooter #leyendaFooter #contenedorUbi #footerRedes2 .bi-geo-alt {
-            font-size: 12px; }
-        footer #grillaFooter #footerRedes #contenedorUbi, footer #grillaFooter #leyendaFooter #contenedorUbi {
+          width: 130px;
+          height: 40px; }
+          footer #grillaFooter #footerRedes #footerRedes2 .bi-facebook, footer #grillaFooter #footerRedes #footerRedes2 .bi-instagram, footer #grillaFooter #footerRedes #footerRedes2 .bi-whatsapp {
+            font-size: 18px; }
+          footer #grillaFooter #footerRedes #footerRedes2 .bi-instagram {
+            font-size: 18px; }
+          footer #grillaFooter #footerRedes #footerRedes2 .bi-whatsapp {
+            font-size: 18px; }
+        footer #grillaFooter #footerRedes #contenedorUbi {
           padding-top: 10px; }
-          footer #grillaFooter #footerRedes #contenedorUbi .pFooter, footer #grillaFooter #leyendaFooter #contenedorUbi .pFooter {
+          footer #grillaFooter #footerRedes #contenedorUbi .pFooter {
+            font-family: "Prompt", sans-serif;
             color: white;
-            font-size: 12px;
-            font-family: 'Prompt', sans-serif; }
-          footer #grillaFooter #footerRedes #contenedorUbi .bi-geo-alt, footer #grillaFooter #leyendaFooter #contenedorUbi .bi-geo-alt {
-            font-size: 10px;
+            font-size: 15px; }
+          footer #grillaFooter #footerRedes #contenedorUbi .bi-geo-alt {
+            font-size: 15px;
             color: white;
             padding-right: 5px; }
       footer #grillaFooter #leyendaFooter .fontLeyendaFooter {
         padding-top: 5px;
+        font-family: "Prompt", sans-serif;
         color: gray;
-        font-size: 10px;
-        font-family: 'Prompt', sans-serif; }
-      footer #grillaFooter #leyendaFooter p {
-        margin-bottom: 0; }
-        footer #grillaFooter #leyendaFooter p .pFooter {
-          color: white;
-          font-size: 12px;
-          font-family: 'Prompt', sans-serif; } }
+        font-size: 13px; }
+      footer #grillaFooter #leyendaFooter .pFooter {
+        font-family: "Prompt", sans-serif;
+        color: white;
+        font-size: 13px; } }
 
+/*----------------------- LARGE -----------------------*/
 @media screen and (min-width: 992px) {
   /*INICIO header + nav*/
   header {
@@ -216,9 +429,9 @@ img {
       height: 65px;
       border-bottom: 1.5px solid white; }
       header nav #logo .kennaFontLogo {
+        font-family: "Prompt", sans-serif;
         color: white;
         font-size: 30px;
-        font-family: 'Prompt', sans-serif;
         width: 15%;
         padding-top: 12px;
         padding-left: 55px;
@@ -249,40 +462,70 @@ img {
       grid-template-columns: 50% 50%;
       grid-template-rows: 105px;
       grid-template-areas: "redes leyenda"; }
-      footer #grillaFooter #footerRedes, footer #grillaFooter #leyendaFooter {
+      footer #grillaFooter #footerRedes {
         grid-area: redes; }
-        footer #grillaFooter #footerRedes #footerRedes2, footer #grillaFooter #leyendaFooter #footerRedes2 {
+        footer #grillaFooter #footerRedes #footerRedes2 {
           background-color: rgba(65, 65, 65, 0.39);
           border-radius: 20px;
           width: 150px;
           height: 40px; }
-          footer #grillaFooter #footerRedes #footerRedes2 .bi-facebook, footer #grillaFooter #leyendaFooter #footerRedes2 .bi-facebook, footer #grillaFooter #footerRedes #footerRedes2 .bi-instagram, footer #grillaFooter #leyendaFooter #footerRedes2 .bi-instagram, footer #grillaFooter #footerRedes #footerRedes2 .bi-whatsapp, footer #grillaFooter #leyendaFooter #footerRedes2 .bi-whatsapp, footer #grillaFooter #footerRedes #footerRedes2 #contenedorUbi .bi-geo-alt, footer #grillaFooter #footerRedes #contenedorUbi #footerRedes2 .bi-geo-alt, footer #grillaFooter #leyendaFooter #footerRedes2 #contenedorUbi .bi-geo-alt, footer #grillaFooter #leyendaFooter #contenedorUbi #footerRedes2 .bi-geo-alt {
+          footer #grillaFooter #footerRedes #footerRedes2 .bi-facebook, footer #grillaFooter #footerRedes #footerRedes2 .bi-instagram, footer #grillaFooter #footerRedes #footerRedes2 .bi-whatsapp {
             font-size: 20px; }
-          footer #grillaFooter #footerRedes #footerRedes2 .a:hover, footer #grillaFooter #leyendaFooter #footerRedes2 .a:hover {
+          footer #grillaFooter #footerRedes #footerRedes2 .bi-instagram {
+            font-size: 20px; }
+          footer #grillaFooter #footerRedes #footerRedes2 .bi-whatsapp {
+            font-size: 20px; }
+          footer #grillaFooter #footerRedes #footerRedes2 .a:hover {
             transform: scale(1.2, 1.2);
             transition: all 0.2s; }
-        footer #grillaFooter #footerRedes #footerRedes2:hover, footer #grillaFooter #leyendaFooter #footerRedes2:hover {
+        footer #grillaFooter #footerRedes #footerRedes2:hover {
           background-color: rgba(87, 36, 92, 0.397); }
-        footer #grillaFooter #footerRedes #contenedorUbi, footer #grillaFooter #leyendaFooter #contenedorUbi {
-          padding-top: 5px; }
-          footer #grillaFooter #footerRedes #contenedorUbi .pFooter, footer #grillaFooter #leyendaFooter #contenedorUbi .pFooter {
+        footer #grillaFooter #footerRedes #contenedorUbi {
+          padding-top: 8px; }
+          footer #grillaFooter #footerRedes #contenedorUbi .pFooter {
+            font-family: "Prompt", sans-serif;
             color: white;
-            font-size: 15px;
-            font-family: 'Prompt', sans-serif; }
-            footer #grillaFooter #footerRedes #contenedorUbi .pFooter:hover, footer #grillaFooter #leyendaFooter #contenedorUbi .pFooter:hover {
+            font-size: 15px; }
+            footer #grillaFooter #footerRedes #contenedorUbi .pFooter:hover {
               color: #8b4991; }
-          footer #grillaFooter #footerRedes #contenedorUbi .bi-geo-alt, footer #grillaFooter #leyendaFooter #contenedorUbi .bi-geo-alt {
+          footer #grillaFooter #footerRedes #contenedorUbi .bi-geo-alt {
+            font-size: 20px;
             padding: 5px; }
       footer #grillaFooter #leyendaFooter {
         padding-top: 5px;
         grid-area: leyenda; }
+        footer #grillaFooter #leyendaFooter p {
+          padding-bottom: 5px; }
+          footer #grillaFooter #leyendaFooter p .pFooter {
+            font-family: "Prompt", sans-serif;
+            color: white;
+            font-size: 15px; }
+            footer #grillaFooter #leyendaFooter p .pFooter:hover {
+              color: #8b4991; }
         footer #grillaFooter #leyendaFooter .fontLeyendaFooter {
+          font-family: "Prompt", sans-serif;
           color: gray;
           font-size: 12px;
-          font-family: 'Prompt', sans-serif; }
-        footer #grillaFooter #leyendaFooter .pFooter {
-          color: white;
-          font-size: 15px;
-          font-family: 'Prompt', sans-serif; }
-          footer #grillaFooter #leyendaFooter .pFooter:hover {
-            color: #8b4991; } }
+          padding-top: 5px; } }
+
+/*TITULOS*/
+#titulosContenedor {
+  display: block; }
+  #titulosContenedor .titulosHtml {
+    font-family: "Prompt", sans-serif;
+    color: white;
+    font-size: calc(20px + 1.5vw);
+    letter-spacing: 5px;
+    text-align: center; }
+
+.parrafosHtml {
+  font-family: "Prompt", sans-serif;
+  color: black;
+  font-size: calc(13px + 0.8vw);
+  text-align: center; }
+
+.leyendaHtmlFont {
+  font-family: "Prompt", sans-serif;
+  color: black;
+  font-size: calc(15px + 1.5vw);
+  text-align: center; }
