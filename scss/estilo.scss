@@ -120,16 +120,19 @@ footer{
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
-                padding-left: 35px;
+                padding-left: 25px;
 
                 .kennaFontLogo{
-                    @include titulosParrafosGeneral($fontLogo , $colorWhiteFont, 35px) ;
+                    @include titulosParrafosGeneral($fontLogo , $colorWhiteFont, 28px) ;
                 }
             }
 
             ul li{
                 .nav-link{
                     color: $colorHoverFooterNav;
+                }
+                .nav-link:hover{
+                    color: $colorWhiteFont;
                 }
             }
         }

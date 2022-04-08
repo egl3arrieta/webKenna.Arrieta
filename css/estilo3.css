@@ -385,13 +385,15 @@ footer {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding-left: 35px; }
+        padding-left: 25px; }
         header nav #logo .kennaFontLogo {
           font-family: "Prompt", sans-serif;
           color: white;
-          font-size: 35px; }
+          font-size: 28px; }
       header nav ul li .nav-link {
         color: #8b4991; }
+      header nav ul li .nav-link:hover {
+        color: white; }
   /*INICIO footer*/
   footer {
     padding-top: 15px;
