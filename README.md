@@ -3,7 +3,7 @@
 <h2> Presentación del repositorio del Proyecto Kenna Palermo Soho </h2>
  <p> Powered by Egle Arrieta, estudiante. </p>
  
-  Proyecto realizado a partir del curso Desarrollo Web dirigido por CoderHouse (enero - marzo 2022).
+  Proyecto realizado a partir del curso Desarrollo Web dirigido por CoderHouse (enero - marzo 2022). <br>
   Kenna Palermo Soho es un Café-Bar ubicado entre las calles Gorriti y Malabia. Se decide utilizar este establecimientos 
   con fines de ocio ya que permite poner en práctica los recursos brindados y desarrollar los conocimientos adquiridos durante la cursada.
  El sitio web cuenta con 5 páginas ErrorPage:
