@@ -8,10 +8,6 @@
 /*CAFETERIA y BAR- General y Media Queries SM y LG
 Recordatorio: titulos y parrafos en la hoja estilos.scss*/
 
-#titulosContenedor{
-    padding-top: 15px;
-}
-
 
 #grillaCafeBar{
     display: flex;
@@ -23,93 +19,102 @@ Recordatorio: titulos y parrafos en la hoja estilos.scss*/
         display: grid;
         justify-content: center;
         align-items: center;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.625rem;
+        }
+        #leyendaHtml1{
+            grid-area: leyenda1;
+        }
+    
+        #leyendaHtml2{
+            grid-area: leyenda2;
+        }
+    
+        #foto1{
+            grid-area: foto1; 
+        }
+        #foto2{
+            grid-area: foto2;
+        }
+        #foto3{
+            grid-area: foto3; 
+        }
+        #foto4{
+            grid-area: foto4;
+        }
+        #foto5{
+            grid-area: foto5; 
+        }
+        #foto6{
+            grid-area: foto6;
+        } 
     }
 }
 
 /*----------------------- SMALL -----------------------*/
 @media only screen and (max-width: 600px){
-    img{
-        object-fit: cover;
-        width: 100%;
-    }
     #grillaCafeBar{
+        padding-bottom: 20px;
         #contededorCasillasCafeBar{    
-            grid-template-columns: 50% 50% ;
+            grid-template-columns: 48% 48% ;
+            grid-template-rows: 60px 150px 150px 150px 60px;
             grid-template-areas:"leyenda1 leyenda1"
                                 "foto1 foto2"
                                 "foto3 foto4"
                                 "foto5 foto6"
                                 "leyenda2 leyenda2";
-            #leyendaHtml1{
-                grid-area: leyenda1;
-            }
+            row-gap: 10px;
+            column-gap: 10px;
+        
             #leyendaHtml2{
                 padding-top: 5px;
-                grid-area: leyenda2;
             }
-            #foto1{
-                grid-area: foto1; 
-            }
-            #foto2{
-                grid-area: foto2;
-            }
-            #foto3{
-                grid-area: foto3; 
-            }
-            #foto4{
-                grid-area: foto4;
-            }
-            #foto5{
-                grid-area: foto5; 
-            }
-            #foto6{
-                grid-area: foto6;
-            } 
         }
     }
 
 }
 
-
-
-
-
 /*----------------------- LARGE -----------------------*/
 @media screen and (min-width: 992px){
     #titulosContenedor{
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     /*comparte estilo de grilla con BAR*/
     #grillaCafeBar{
         #contededorCasillasCafeBar{
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 240px 240px;
             grid-template-areas:"leyenda1 foto1 foto2 foto3 leyenda2"
                                 "leyenda1 foto4 foto5 foto6 leyenda2";
+            row-gap: 20px;
+            column-gap: 20px;
+            margin-bottom: 20px;
+
+            img{
+                filter:opacity(0.85);                
+            }
+            img:hover{
+                filter: none;
+                transform: scale(1.02 , 1.02);
+                transition: 0.3s;
+            }
             #leyendaHtml1{
-                grid-area: leyenda1;
+                border-top: 2px dashed rgb(80, 41, 83);
+                border-bottom: 2px dashed rgb(80, 41, 83);
+                padding-top: 50px ;
+                padding-bottom: 50px;
             }
+        
             #leyendaHtml2{
-                grid-area: leyenda2;
+                border-top: 2px dashed rgb(80, 41, 83);
+                border-bottom: 2px dashed rgb(80, 41, 83);
+                padding-top: 50px ;
+                padding-bottom: 50px;
             }
-            #foto1{
-                grid-area: foto1; 
-            }
-            #foto2{
-                grid-area: foto2;
-            }
-            #foto3{
-                grid-area: foto3; 
-            }
-            #foto4{
-                grid-area: foto4;
-            }
-            #foto5{
-                grid-area: foto5; 
-            }
-            #foto6{
-                grid-area: foto6;
-            } 
         }
     }
 }

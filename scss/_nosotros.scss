@@ -8,19 +8,16 @@
 /*NOSOTROS - General y Media Queries SM y LG
 Recordatorio: titulos y parrafos en la hoja estilos.scss*/
 
-#titulosContenedor{
-    padding-top: 15px;
-}
-
 #grillaNosotros{
     #contenedorCasillasNos{
         justify-content: center;
         margin-right: 0;
         margin-left: 0;
-        #carouselExampleControls{
-            img{
-                object-fit: cover;
-            }
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.625rem;
         }
     }
 }
@@ -32,22 +29,22 @@ Recordatorio: titulos y parrafos en la hoja estilos.scss*/
             #carouselExampleControls{
                 height: 250px;
             }
-
             #leyendaNosotros2{
-                visibility:hidden;
+                display: none;
             }
         }
     }
 
     #presentacionNosotros{
         width: 95%;
-        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 20px;
     }
 }
 /*----------------------- LARGE -----------------------*/
 @media screen and (min-width: 992px){
     #titulosContenedor{
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     #grillaNosotros{
@@ -65,12 +62,15 @@ Recordatorio: titulos y parrafos en la hoja estilos.scss*/
             #carouselExampleControls{
                 width: 60%;
                 height: 400px;
+                button{
+                    z-index: 0;
+                }
             }
         }
     }
     #presentacionNosotros{
-        width: 60%;
+        width: 70%;
         padding-top: 15px;
-        padding-bottom: 15px;
+        padding-bottom: 25px;
     }
 }

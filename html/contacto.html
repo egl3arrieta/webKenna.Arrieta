@@ -16,23 +16,42 @@
     <title>Kenna Palermo Soho | Contacto</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div id="logo"><a href="../index.html"><h1 class="kennaFontLogo">KENNA</h1> </a>
-            </div> 
-            <ul >
-                <li><a href="../index.html">HOME</a ></li>
-                <li><a href="nosotros.html">NOSOTROS</a></li>
-                <li><a href="cafeteria.html">CAFETERIA</a></li>
-                <li><a href="bar.html">BAR</a></li>
-                <li><a href="contacto.html">CONTACTO</a></li>
-            </ul>
+    <header id="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid" id="logo">
+                <a class="navbar-brand" href="../index.html">
+                    <h1 class="kennaFontLogo">KENNA</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">NOSOTROS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cafeteria.html">CAFETERIA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bar.html">BAR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">CONTACTO</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main class="backgroundHtml">
         <section id="titulosContenedor" class="container">
             <h2 class="titulosHtml">ENCONTRANOS</h2>
         </section>
+
         <form >
             <div class="container">
                 <fieldset>
@@ -91,7 +110,12 @@
             </div>
         </form>
 
-
+        <div class="container">
+            <section class="row">
+                <div id="maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.503130696597!2d-58.43047058505271!3d-34.59143686435478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb2e82b3429b%3A0xff922461525d0808!2sKenna!5e0!3m2!1ses-419!2sar!4v1649396381425!5m2!1ses-419!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
+            </section>
+        </div>
 
     </main>
 

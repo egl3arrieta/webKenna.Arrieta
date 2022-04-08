@@ -55,7 +55,7 @@ p {
 @media only screen and (max-width: 600px) {
   #imgHome img {
     width: 100%;
-    height: 350px;
+    height: 300px;
     object-fit: cover; }
   #leyendaHome {
     padding-top: 10px; }
@@ -111,30 +111,31 @@ p {
 /*MIXIN*/
 /*NOSOTROS - General y Media Queries SM y LG
 Recordatorio: titulos y parrafos en la hoja estilos.scss*/
-#titulosContenedor {
-  padding-top: 15px; }
-
 #grillaNosotros #contenedorCasillasNos {
   justify-content: center;
   margin-right: 0;
   margin-left: 0; }
-  #grillaNosotros #contenedorCasillasNos #carouselExampleControls img {
-    object-fit: cover; }
+  #grillaNosotros #contenedorCasillasNos img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.625rem; }
 
 /*----------------------- SMALL -----------------------*/
 @media only screen and (max-width: 600px) {
   #grillaNosotros #contenedorCasillasNos #carouselExampleControls {
     height: 250px; }
   #grillaNosotros #contenedorCasillasNos #leyendaNosotros2 {
-    visibility: hidden; }
+    display: none; }
   #presentacionNosotros {
     width: 95%;
-    padding-bottom: 10px; } }
+    padding-top: 10px;
+    padding-bottom: 20px; } }
 
 /*----------------------- LARGE -----------------------*/
 @media screen and (min-width: 992px) {
   #titulosContenedor {
-    padding-bottom: 10px; }
+    padding-bottom: 20px; }
   #grillaNosotros {
     width: 100%; }
     #grillaNosotros #contenedorCasillasNos #leyendaNosotros {
@@ -152,10 +153,12 @@ Recordatorio: titulos y parrafos en la hoja estilos.scss*/
     #grillaNosotros #contenedorCasillasNos #carouselExampleControls {
       width: 60%;
       height: 400px; }
+      #grillaNosotros #contenedorCasillasNos #carouselExampleControls button {
+        z-index: 0; }
   #presentacionNosotros {
-    width: 60%;
+    width: 70%;
     padding-top: 15px;
-    padding-bottom: 15px; } }
+    padding-bottom: 25px; } }
 
 /*VARIABLES*/
 .backgroundHtml {
@@ -183,9 +186,6 @@ Recordatorio: titulos y parrafos en la hoja estilos.scss*/
 /*MIXIN*/
 /*CAFETERIA y BAR- General y Media Queries SM y LG
 Recordatorio: titulos y parrafos en la hoja estilos.scss*/
-#titulosContenedor {
-  padding-top: 15px; }
-
 #grillaCafeBar {
   display: flex;
   justify-content: center; }
@@ -196,19 +196,14 @@ Recordatorio: titulos y parrafos en la hoja estilos.scss*/
     display: grid;
     justify-content: center;
     align-items: center; }
-
-/*----------------------- SMALL -----------------------*/
-@media only screen and (max-width: 600px) {
-  img {
-    object-fit: cover;
-    width: 100%; }
-  #grillaCafeBar #contededorCasillasCafeBar {
-    grid-template-columns: 50% 50%;
-    grid-template-areas: "leyenda1 leyenda1" "foto1 foto2" "foto3 foto4" "foto5 foto6" "leyenda2 leyenda2"; }
+    #grillaCafeBar #contededorCasillasCafeBar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.625rem; }
     #grillaCafeBar #contededorCasillasCafeBar #leyendaHtml1 {
       grid-area: leyenda1; }
     #grillaCafeBar #contededorCasillasCafeBar #leyendaHtml2 {
-      padding-top: 5px;
       grid-area: leyenda2; }
     #grillaCafeBar #contededorCasillasCafeBar #foto1 {
       grid-area: foto1; }
@@ -221,32 +216,49 @@ Recordatorio: titulos y parrafos en la hoja estilos.scss*/
     #grillaCafeBar #contededorCasillasCafeBar #foto5 {
       grid-area: foto5; }
     #grillaCafeBar #contededorCasillasCafeBar #foto6 {
-      grid-area: foto6; } }
+      grid-area: foto6; }
+
+/*----------------------- SMALL -----------------------*/
+@media only screen and (max-width: 600px) {
+  #grillaCafeBar {
+    padding-bottom: 20px; }
+    #grillaCafeBar #contededorCasillasCafeBar {
+      grid-template-columns: 48% 48%;
+      grid-template-rows: 60px 150px 150px 150px 60px;
+      grid-template-areas: "leyenda1 leyenda1" "foto1 foto2" "foto3 foto4" "foto5 foto6" "leyenda2 leyenda2";
+      row-gap: 10px;
+      column-gap: 10px; }
+      #grillaCafeBar #contededorCasillasCafeBar #leyendaHtml2 {
+        padding-top: 5px; } }
 
 /*----------------------- LARGE -----------------------*/
 @media screen and (min-width: 992px) {
   #titulosContenedor {
-    padding-bottom: 10px; }
+    padding-bottom: 20px; }
   /*comparte estilo de grilla con BAR*/
   #grillaCafeBar #contededorCasillasCafeBar {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "leyenda1 foto1 foto2 foto3 leyenda2" "leyenda1 foto4 foto5 foto6 leyenda2"; }
+    grid-template-rows: 240px 240px;
+    grid-template-areas: "leyenda1 foto1 foto2 foto3 leyenda2" "leyenda1 foto4 foto5 foto6 leyenda2";
+    row-gap: 20px;
+    column-gap: 20px;
+    margin-bottom: 20px; }
+    #grillaCafeBar #contededorCasillasCafeBar img {
+      filter: opacity(0.85); }
+    #grillaCafeBar #contededorCasillasCafeBar img:hover {
+      filter: none;
+      transform: scale(1.02, 1.02);
+      transition: 0.3s; }
     #grillaCafeBar #contededorCasillasCafeBar #leyendaHtml1 {
-      grid-area: leyenda1; }
+      border-top: 2px dashed #502953;
+      border-bottom: 2px dashed #502953;
+      padding-top: 50px;
+      padding-bottom: 50px; }
     #grillaCafeBar #contededorCasillasCafeBar #leyendaHtml2 {
-      grid-area: leyenda2; }
-    #grillaCafeBar #contededorCasillasCafeBar #foto1 {
-      grid-area: foto1; }
-    #grillaCafeBar #contededorCasillasCafeBar #foto2 {
-      grid-area: foto2; }
-    #grillaCafeBar #contededorCasillasCafeBar #foto3 {
-      grid-area: foto3; }
-    #grillaCafeBar #contededorCasillasCafeBar #foto4 {
-      grid-area: foto4; }
-    #grillaCafeBar #contededorCasillasCafeBar #foto5 {
-      grid-area: foto5; }
-    #grillaCafeBar #contededorCasillasCafeBar #foto6 {
-      grid-area: foto6; } }
+      border-top: 2px dashed #502953;
+      border-bottom: 2px dashed #502953;
+      padding-top: 50px;
+      padding-bottom: 50px; } }
 
 * {
   margin: 0;
@@ -264,9 +276,6 @@ Recordatorio: titulos y parrafos en la hoja estilos.scss*/
 /*MIXIN*/
 /*CONTACTO- General y Media Queries SM y LG
 Recordatorio: titulos y parrafos en la hoja estilos.scss*/
-#titulosContenedor {
-  padding-top: 15px; }
-
 /*FORMULARIO*/
 #contenedorButton {
   display: flex;
@@ -279,29 +288,50 @@ Recordatorio: titulos y parrafos en la hoja estilos.scss*/
 
 legend {
   font-family: "Prompt", sans-serif;
-  color: black;
+  color: white;
   font-size: calc(13px + 1vw);
   text-align: center; }
 
-form .mb-3 {
-  width: 50%; }
+/*----------------------- SMALL -----------------------*/
+@media only screen and (max-width: 600px) {
+  #maps {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    height: 200px; } }
 
-nav #logo .kennaFontLogo {
-  font-weight: bold; }
+/*----------------------- LARGE -----------------------*/
+@media screen and (min-width: 992px) {
+  #maps {
+    padding-top: 15px;
+    padding-bottom: 25px;
+    height: 280px; }
+  form .mb-3 {
+    width: 50%; } }
 
-nav #logo a {
-  text-decoration: none; }
-
-nav ul {
-  display: flex;
-  list-style-type: none; }
-  nav ul li {
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none; }
-    nav ul li a {
-      color: white;
+header {
+  z-index: 1; }
+  header nav {
+    background-color: black; }
+    header nav #logo a {
       text-decoration: none; }
+    header nav #logo .kennaFontLogo {
+      font-weight: bold; }
+    header nav button {
+      margin-right: 20px;
+      margin-bottom: 12px; }
+    header nav .navbar-toggler {
+      background-color: black;
+      border: 1px solid gray; }
+      header nav .navbar-toggler .navbar-toggler-icon {
+        background-image: url(../assets/menuhamb.png); }
+    header nav ul {
+      display: flex;
+      list-style-type: none; }
+      header nav ul li {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: none; }
+        header nav ul li a {
+          text-decoration: none; }
 
 footer {
   background-color: black; }
@@ -343,8 +373,7 @@ footer {
   /*INICIO header + nav*/
   header {
     width: 100%;
-    box-sizing: border-box;
-    background: #0f011f; }
+    box-sizing: border-box; }
     header nav {
       flex-direction: column;
       display: flex;
@@ -355,23 +384,14 @@ footer {
         padding-top: 10px;
         width: 100%;
         display: flex;
-        justify-content: center; }
+        justify-content: space-between;
+        padding-left: 35px; }
         header nav #logo .kennaFontLogo {
           font-family: "Prompt", sans-serif;
-          color: #8b4991;
-          font-size: 35px;
-          text-align: center; }
-      header nav ul {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-left: 0;
-        height: 100px; }
-        header nav ul li a {
-          font-size: 12px;
-          color: white; }
-        header nav ul a:hover {
-          color: #8b4991; }
+          color: white;
+          font-size: 35px; }
+      header nav ul li .nav-link {
+        color: #8b4991; }
   /*INICIO footer*/
   footer {
     padding-top: 15px;
@@ -421,13 +441,14 @@ footer {
     position: sticky;
     top: 0;
     box-sizing: border-box;
-    width: 100%;
-    background-color: black; }
+    width: 100%; }
     header nav {
       display: flex;
       flex-direction: row;
       height: 65px;
       border-bottom: 1.5px solid white; }
+      header nav #logo a {
+        text-decoration: none; }
       header nav #logo .kennaFontLogo {
         font-family: "Prompt", sans-serif;
         color: white;
@@ -435,9 +456,7 @@ footer {
         width: 15%;
         padding-top: 12px;
         padding-left: 55px;
-        padding-bottom: 10px; }
-        header nav #logo .kennaFontLogo a {
-          text-decoration: none; }
+        padding-bottom: 5px; }
       header nav ul {
         justify-content: flex-end;
         align-items: center;
@@ -446,14 +465,15 @@ footer {
         height: 100%; }
         header nav ul li {
           padding-right: 15px;
-          padding-left: 15px;
           font-size: 15px; }
-        header nav ul a:hover {
-          border-radius: 5px;
-          padding: 5px;
-          transition: all 0.1s;
-          background-color: rgba(154, 70, 161, 0.397);
-          color: white; }
+          header nav ul li .nav-link {
+            color: white; }
+          header nav ul li .nav-link:hover {
+            border-radius: 5px;
+            padding: 5px;
+            transition: all 0.1s;
+            background-color: rgba(154, 70, 161, 0.397);
+            color: white; }
   /*INICIO footer*/
   footer {
     padding-top: 10px; }
@@ -514,18 +534,19 @@ footer {
   #titulosContenedor .titulosHtml {
     font-family: "Prompt", sans-serif;
     color: white;
-    font-size: calc(20px + 1.5vw);
+    font-size: calc(25px + 1.5vw);
     letter-spacing: 5px;
-    text-align: center; }
+    text-align: center;
+    padding-top: 25px; }
 
 .parrafosHtml {
   font-family: "Prompt", sans-serif;
-  color: black;
+  color: white;
   font-size: calc(13px + 0.8vw);
   text-align: center; }
 
 .leyendaHtmlFont {
   font-family: "Prompt", sans-serif;
-  color: black;
+  color: white;
   font-size: calc(15px + 1.5vw);
   text-align: center; }

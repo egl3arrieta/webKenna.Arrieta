@@ -20,28 +20,46 @@
 <body>
     <!--inicio header nav-->
     <header id="header">
-        <nav>
-            <div id="logo"><a href="index.html"><h1 class="kennaFontLogo">KENNA</h1> </a>
-            </div> 
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="html/nosotros.html">NOSOTROS</a></li>
-                <li><a href="html/cafeteria.html">CAFETERIA</a></li>
-                <li><a href="html/bar.html">BAR</a></li>
-                <li><a href="html/contacto.html">CONTACTO</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid" id="logo">
+                <a class="navbar-brand" href="#">
+                    <h1 class="kennaFontLogo">KENNA</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/nosotros.html">NOSOTROS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/cafeteria.html">CAFETERIA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/bar.html">BAR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/contacto.html">CONTACTO</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <!--fin header nav-->
     <main> 
         <div id="imgHome">
-            <img src="assets/backgroundHome1.jpg" alt="Kenna Logo" class="imgHomeClass">
+            <img src="assets/backgroundHome1.png" alt="Kenna Logo" class="imgHomeClass">
         </div>
 
         <div id="leyendaHome">
             <div id="leyendaHome2" class="container">
                 <div class="flechas">
-                    <img  data-aos="fade-left" src="assets/flechaneonizq.png" alt="flecha">
+                    <img  data-aos="fade-left" src="assets/flechaneonizq.png" alt="flecha neon">
                 </div>
                 <section id="banner">
                     <h2 class="tituloHome">TRAGOS MUSICA COMIDA </h2>
@@ -49,7 +67,7 @@
                     <h2 class="tituloHome"> AMIGXS | FAMILIA </h2>
                 </section>
                 <div class="flechas">
-                    <img data-aos="fade-left" src="assets/flechaneonizq.png" alt="flecha"> 
+                    <img data-aos="fade-left" src="assets/flechaneonizq.png" alt="flecha neon"> 
                 </div>
             </div>
         </div>

@@ -2,12 +2,14 @@
 /*VARIABLES*/
 $colorWhiteFont: white;
 $colorIcon: white;
-$colorParrafos: black;
+$colorParrafos: rgb(255, 255, 255);
 $colorHoverFooterNav: rgb(139, 73, 145);
 $fontParrafos: 'Prompt', sans-serif;
 $fontTitulos: 'Darker Grotesque', sans-serif;
 $liFont: Verdana, Geneva, Tahoma, sans-serif;
 $fontLogo: 'Prompt', sans-serif;
+$tamanioTitulosHtml: calc(25px + 1.5vw);
+$tamanioParrafosHtml: calc(13px + 0.8vw);
 
 .backgroundHtml{
     background: #614385;  /* fallback for old browsers */
@@ -31,4 +33,3 @@ $fontLogo: 'Prompt', sans-serif;
     justify-content: center;
     align-items: center;
 }
-
